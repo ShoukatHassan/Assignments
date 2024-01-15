@@ -1,0 +1,288 @@
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.Orange {
+    color:orange;
+}
+
+.blue {
+    color: blue;
+}
+
+.first {
+    background-color: aqua;
+    border-radius: 25px;
+    font-size: xx-large;
+
+}
+
+.second {
+    background-color: yellow;
+    color: red;
+    border-radius: 25px;
+    font-size: xx-large;
+    text-decoration: none;
+}
+
+.A {
+    background-color:yellow;
+    font-size: xx-large;
+    padding: 10px;
+    color: blue;
+    border-radius: 25px;
+    margin: 25px;
+}
+
+.B {
+    background-color:yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+}
+
+.C{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.D{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+}
+.E{
+    
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+}
+.F{
+        
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.G{
+         
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.H{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.I{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.J{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.K{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.L{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+}
+.M{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+}
+.N{
+    
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.O{
+        
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.P{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.Q{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.R{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.S{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.T{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.U{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.V{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.W{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.X{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.Y{ background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+
+}
+.Z{
+    background-color: yellow;
+    font-size: xx-large;
+    color: blue;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 25px;
+
+}
+.form{
+    background-color: aqua;
+    border-radius: 25px;
+    padding: 10px;
+    
+}
+.Top{
+    position: fixed;
+    bottom: 10px;
+    right: 10px ;
+    background-color: red;
+    padding: 20px;
+    border-radius: 20px;
+}
