@@ -1,0 +1,122 @@
+@font-face {
+    font-family: "PT_Sans";
+    src: url("./PT_Sans/PT_Sans-Regular.ttf");
+}
+body{
+    font-family: "PT_Sans";
+    margin: 0;
+    padding: 0;
+}
+header{
+    height: 90px;
+    width: 100%;
+}
+.main-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.logo{
+    display: inline;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li{
+    margin-right: 20px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.nav a:hover{
+    color: #45c103;
+}
+.searchbar {
+    display: flex;
+    align-items: center;
+}
+.searchbar input {
+    background-color:rgb(245, 244, 244) ;
+    padding: 10px;
+    border-width: 1px 0px 1px 1px;
+    border-color: #000;
+    border-radius: 50px 0px 0px 50px;
+}
+.searchbar input:hover{
+    background-color: #d1d1d1;
+}
+.searchbar button {
+    padding: 10px 20px;
+    margin-left: -15px;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.searchbar button:hover{
+    background-color: #d1d1d1;
+}
+.btns a{
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-left: 10px;
+    font-weight: bold;   
+}
+
+#btn{
+    background-color: #389a04;
+    color: #fff;
+}
+#btn:hover{
+    background-color: #45c103;
+}
+.links ul {
+    list-style: none;
+    display: flex;
+    margin: 0px 0px 0px 30px;
+    padding: 0;
+}
+
+.links li{
+    margin-right: 20px;
+}
+
+.links a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+}
+.description{
+    margin-left: 50px;
+}
+.description h1{
+    font-size: 80px;
+    color:#338d03;
+}
+.description h2{
+    font-size: 25px;
+    color: #a1a1a1;
+}
+.photo img{
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    margin-right: 20%;
+}
