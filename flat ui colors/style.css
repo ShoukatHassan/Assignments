@@ -1,0 +1,609 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.maindiv {
+    width: 100%;
+    min-height: 729px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    background-image: url(./Images/star.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    
+}
+.class1, .class2, .class3, .class4, .class5, .class6{
+    width:25% ;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 5px;  
+    align-items: center;padding: 10px;
+}
+.class1>a, .class2>a, .class3>a, .class4>a, .class5>a, .class6>a{
+    color: black;
+    text-decoration: none;  
+    
+
+}
+img{
+    width: 280px; 
+    height: 200px; 
+    border-radius: 15px;  
+    padding: 15px;    
+}
+.class1{
+    position: absolute;
+    top: 100px;
+    left: 10%;
+}
+.class2{
+    position: absolute;
+    top: 100px;
+    left: 40%;
+}
+.class3{
+    position: absolute;
+    left: 70%;
+    top: 100px;
+}
+.class4{
+    position: absolute;
+    top: 400px;
+    left: 10%;   
+}
+.class5{
+    position: absolute;
+    top: 400px;
+    left: 40%;
+}
+.class6{
+    position: absolute;
+    top:400px;
+    left: 70%;
+}
+.header{
+    width: 100%;
+    min: height 50px;
+    line-height: 50px;
+}
+.header>a{
+    text-decoration: none;
+    color: black;
+    
+    
+}
+button{
+    background-color: black;
+    color: #fff;
+    height: 50px;
+    width: 20%;
+    position: absolute;
+    left: 40%;
+}
+.one, .two, .three, .four{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    
+    
+
+
+}
+.one>div, .two>div, .three>div, .four>div{
+    width: 20%;
+    height:160px ;   
+}
+.aa{
+    background-color:#f6e58d ;
+}
+.bb{
+    background-color: #ffbe76;
+
+}
+.cc{
+    background-color:#ff7979 ;
+}
+.dd{
+    background-color: #badc58
+    ;
+}
+.ee{
+    background-color: 
+    #dff9fb;
+}
+.ff{
+    background-color: #f9ca24;
+}
+.gg{
+    background-color: #f0932b
+    ;
+}
+.hh{
+    background-color: #eb4d4b;
+}
+.ii{
+    background-color: 
+    #6ab04c;
+}
+.jj{
+    background-color: 
+    #c7ecee
+    ;
+}
+.kk{
+    background-color: #7ed6df;
+}
+.ll{
+    background-color: #e056fd;
+}
+.mm{
+    background-color: #686de0;
+}
+.nn{
+    background-color: 
+    #30336b;
+}
+.oo{
+    background-color: 
+    #95afc0
+    ;
+}
+.pp{
+    background-color: #22a6b3;
+}
+.qq{
+   background-color:#be2edd ;
+
+}
+.rr{
+    background-color: 
+    #4834d4;
+}
+.ss{background-color: #130f40
+    ;
+
+}
+.tt{
+    background-color: #535c68;
+}
+.one1, .two2, .three3, .four4{
+    width: 100%;
+    height: 160px;
+    display: flex;
+}
+.one1>div, .two2>div, .three3>div, .four4>div{
+    width: 20%;
+    height:160px ;
+
+}
+.aaa{
+    background-color:#00a8ff
+    ;
+}
+.bbb{
+    background-color: #9c88ff
+    ;
+}
+.ccc{
+    background-color: 
+    #fbc531
+    ;
+}
+.ddd{
+    background-color: 
+    #4cd137;
+}
+.eee{
+    background-color: #487eb0;
+}
+.fff{
+    background-color: #0097e6;
+}
+.ggg{
+    background-color: #8c7ae6;
+}
+.hhh{
+    background-color: 
+    #e1b12c
+    ;
+}
+.iii{
+    background-color: 
+    #44bd32;
+
+}
+.jjj{
+    background-color: 
+    #40739e;
+}
+.kkk{
+    background-color: #e84118;
+}
+.lll{
+    background-color: #f5f6fa;
+}
+.mmm{
+    background-color: 
+    #7f8fa6;
+}
+.nnn{
+    background-color: 
+    #273c75;
+}
+.ooo{
+    background-color: #353b48;
+}
+.ppp{
+    background-color: #c23616;
+}
+.qqq{
+    background-color: #dcdde1;
+}
+.rrr{
+    background-color: 
+    #718093;
+}
+.sss{
+    background-color: 
+    #192a56;
+}
+.ttt{
+    background-color: 
+    #2f3640;
+}
+.one11, .two22, .three33, .four44{
+    width: 100%;
+    height: 160px;
+    display: flex;
+
+}
+.one11>div, .two22>div, .three33>div, .four44>div{
+    width: 20%;
+    height:160px ;
+}
+.aaaa{
+    background-color:#ff9ff3
+    ;
+}
+.bbbb{
+    background-color: 
+    #feca57;
+}
+.cccc{
+    background-color: #ff6b6b
+    ;
+}
+.dddd{
+    background-color:#48dbfb;
+}
+.eeee{
+    background-color: 
+    #1dd1a1
+    ;
+}
+.ffff{
+    background-color: #f368e0
+    ;
+}
+.gggg{
+    background-color: 
+    #ff9f43;
+}
+.hhhh{
+    background-color: #ee5253
+    ;
+}
+.iiii{
+    background-color: 
+    #0abde3;
+}
+.jjjj{
+    background-color: 
+    #10ac84;
+}
+.kkkk{
+    background-color: #00d2d3;
+}
+.llll{
+    background-color: 
+    #54a0ff
+    ;
+}
+.mmmm{
+    background-color: 
+    #54a0ff
+    ;
+}
+.nnnn{
+    background-color: 
+    #c8d6e5;
+}
+.oooo{
+    background-color: 
+    #576574;
+}
+.pppp{
+    background-color: #01a3a4;
+}
+.qqqq{
+    background-color: 
+    #2e86de;
+}
+.rrrr{
+    background-color: 
+    #2e86de;
+}
+.ssss{
+    background-color: 
+    #8395a7;
+}
+.tttt{
+    background-color: 
+    #222f3e;
+}
+.one111, .two222, .three333, .four444{
+    width: 100%;
+    height: 160px;
+    display: flex;
+
+}
+.one111>div, .two222>div, .three333>div, .four444>div{
+    width: 20%;
+    height:160px ;
+}
+.A{
+    background-color: #eccc68;
+}    
+.B{
+    background-color: 
+    #ff7f50;
+}
+.C{
+    background-color: 
+    #ff6b81
+    ;
+}
+.D{
+    background-color: 
+    #a4b0be;
+}
+.E{
+    background-color: 
+    #57606f;
+}
+.F{
+    background-color: #ffa502;
+}
+.G{
+    background-color: #ff6348;
+}
+.H{
+    background-color: 
+    #ff4757;
+}
+.I{
+    background-color: #747d8c;
+}
+.J{
+    background-color: 
+    #2f3542;
+}
+.K{
+    background-color: #7bed9f;
+}
+.L{
+    background-color: 
+    #70a1ff;
+}
+.M{
+    background-color: 
+    #5352ed;
+}
+.N{
+    background-color: 
+  
+    #ffffff;
+}
+.O{
+    background-color: #dfe4ea;
+}
+.P{
+    background-color: #2ed573;
+}
+.Q{
+    background-color: 
+    #1e90ff;
+}
+.R{
+    background-color: 
+    #3742fa
+    ;
+}
+.S{
+    background-color: #f1f2f6;
+}
+.T{
+    background-color: #ced6e0;
+}
+.one1111, .two2222, .three3333, .four4444{
+    width: 100%;
+    height: 160px;
+    display: flex;
+
+}
+.one1111>div, .two2222>div, .three3333>div, .four4444>div{
+    width: 20%;
+    height:160px ;
+}
+.AA{
+    background-color:#FFC312 ;
+}
+.BB{
+    background-color: 
+    #C4E538;
+}
+.CC{
+    background-color: 
+    #12CBC4;
+}
+.DD{
+    background-color: 
+    #FDA7DF;
+}
+.EE{
+    background-color: 
+    #ED4C67;
+}
+.FF{
+    background-color: #F79F1F;
+}
+.GG{
+    background-color: 
+    #A3CB38;
+}
+.HH{
+    background-color: 
+    #1289A7;
+}
+.II{
+    background-color: 
+    #D980FA;
+}
+.JJ{
+    background-color: 
+    #B53471
+    ;
+}
+.KK{
+    background-color: #EE5A24;
+}
+.LL{
+    background-color: 
+    #009432;
+}
+.MM{
+    background-color: 
+    #0652DD;
+}
+.NN{
+    background-color: 
+    #9980FA;
+}
+.OO{
+    background-color: 
+    #833471;
+}
+.PP{
+    background-color: #EA2027;
+}
+.QQ{
+    background-color: 
+    #006266;
+}
+.RR{
+    background-color: 
+    #1B1464;
+}
+.SS{
+    background-color: 
+    #5758BB;
+}
+.TT{
+    background-color: 
+    #6F1E51;
+}
+.one11111, .two22222, .three33333, .four44444{
+    width: 100%;
+    height: 160px;
+    display: flex;
+
+}
+.one11111>div, .two22222>div, .three33333>div, .four44444>div{
+    width: 20%;
+    height:160px ;
+}
+.AAA{
+    background-color:#fad390 ;
+}
+.BBB{
+    background-color: #f8c291;
+}
+.CCC{
+    background-color: 
+    #6a89cc;
+}
+.DDD{
+    background-color: 
+    #82ccdd;
+}
+.EEE{
+background-color: 
+#b8e994;
+}
+.FFF{
+    background-color: #f6b93b;
+}
+.GGG{
+    background-color: 
+    #e55039;
+}
+.HHH{
+    background-color: 
+    #4a69bd;
+}
+.III{
+    background-color: 
+    #60a3bc;
+}
+.JJJ{
+    background-color: 
+    #78e08f;
+}
+.KKK{
+    background-color: #fa983a;
+}
+.LLL{
+    background-color: 
+    #eb2f06;
+}
+.MMM{
+    background-color: 
+    #1e3799;
+}
+.NNN{
+    background-color: 
+    #3c6382;
+}
+.OOO{
+    background-color: 
+    #38ada9;
+}
+.PPP{
+   background-color:#e58e26 ; 
+}
+.QQQ{
+    background-color: #b71540;
+}
+.RRR{
+    background-color: 
+    #0c2461;
+}
+.SSS{
+    background-color: 
+    #0a3d62;
+}
+.TTT{
+    background-color: #079992;
+}
+
+
+
+
+
+       
