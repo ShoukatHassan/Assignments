@@ -1,0 +1,25 @@
+.btn-1{
+    background-color: #46B749 !important;
+    width: 100px;
+    border-radius: 5px;
+}
+.btn-2{
+background-color:#3682FF !important ;
+margin-left: 5px;
+border-radius: 5px;
+
+}
+.btn-3{
+background-color:#23315F !important ;
+margin-left: 5px;
+border-radius: 5px;
+}
+.content{
+    background-image: url("./Images/01.jpg");
+    height: 60vh;
+}
+.heading-1{
+    color: white;
+   
+
+}
