@@ -1,0 +1,91 @@
+.btn-1{
+    background-color: #46B749 !important;
+    width: 100px;
+    border-radius: 5px;
+    
+}
+.btn-2{
+background-color:#3682FF !important ;
+margin-left: 5px;
+border-radius: 5px;
+
+}
+.btn-3{
+background-color:#23315F !important ;
+margin-left: 5px;
+border-radius: 5px;
+}
+.content{
+    background-image: url("./Images/01.jpg");
+    height: 60vh;
+}
+.heading-1{
+    color:#FAF7F0 !important;
+    font-size: 3rem !important;
+   
+
+}
+
+.content-btn{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 10px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.content-div{
+    margin-top: 50px;
+   z-index: 1;
+    flex-direction: column !important;
+    width: 40vw !important;
+    height: 40vh !important;
+   
+    align-items: center;
+    justify-content: space-between !important;
+}
+.search-bar{
+    width: 80% !important;
+    border: none;
+}
+.content-image{
+    position: absolute;
+    right: 0;
+    height: 60vh;
+}
+.monogram{
+    position:absolute;
+    right: 10vw;
+    top:30vh
+    
+
+}
+.nav-link{
+    color: black;
+}
+.cards-part{
+    border-top: gray !important;
+    border-bottom: gray !important;
+    gap: 3rem !important;
+}
+.cards-btn{
+    background-color: #CEE3FF;
+    color: gray;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    padding: 5px;
+
+}
+.project-btn{
+    background-color: #1D67BD;
+    color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+
+}
+
