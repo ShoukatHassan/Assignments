@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('./random-number-gradient-pastel-math-background-vector.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.counter-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;;
+    width: 300px;
+   
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 2em;
+}
+
+#counter {
+    font-size: 4em;
+    margin: 20px 0;
+    color: #333333;
+}
+
+#parity {
+    font-size: 1.5em;
+    color: #888888;
+    margin-bottom: 30px;
+}
+
+button {
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#increment {
+    background-color: #28a745;
+    color: white;
+}
+
+button#decrement {
+    background-color: #dc3545;
+    color: white;
+}
+
+button#reset {
+    background-color: #ffc107;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+button#increment:hover {
+    background-color: #218838;
+}
+
+button#decrement:hover {
+    background-color: #c82333;
+}
+
+button#reset:hover {
+    background-color: #e0a800;
+}
