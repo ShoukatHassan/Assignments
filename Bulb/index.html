@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bulb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background: rgb(238,174,202);
+background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(129,52,119,1) 27%, rgba(196,190,216,1) 47%, rgba(181,196,221,1) 64%, rgba(171,200,225,1) 75%, rgba(164,203,228,1) 83%, rgba(158,205,230,1) 89%, rgba(154,183,231,0.38707983193277307) 93%, rgba(148,208,233,0.8184523809523809) 100%);
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .bulb {
+            width: 100px;
+            height: 180px;
+            background-color: #444;
+            border-radius: 50% 50% 20% 20%;
+            position: relative;
+            margin: 20px auto;
+        }
+        .bulb.on {
+            background-color: yellow;
+        }
+        .filament {
+            width: 20px;
+            height: 60px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #onButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #offButton {
+            background-color: #f44336;
+            color: white;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bulb" id="bulb">
+            <div class="filament"></div>
+        </div>
+        <button id="onButton">Turn On</button>
+        <button id="offButton">Turn Off</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        let bulb = document.getElementById('bulb');
+        let onButton = document.getElementById('onButton');
+        let offButton = document.getElementById('offButton');
+        let message = document.getElementById('message');
+        let onCount = 0;
+
+        onButton.addEventListener('click', () => {
+            if (!bulb.classList.contains('on')) {
+                bulb.classList.add('on');
+                onCount++;
+            }
+            if (onCount === 4) {
+                message.textContent = 'Agar Bulb ur gaya to paise longa beta';
+                onCount = 0;  // Reset count after showing message
+            } else {
+                message.textContent = '';
+            }
+        });
+
+        offButton.addEventListener('click', () => {
+            bulb.classList.remove('on');
+        });
+    </script>
+</body>
+</html>
