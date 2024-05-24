@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding-top: 80px; /* Adjust if necessary */
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 20px;
+      box-shadow: 20px 20px 60px #bcbcbc, 
+                -20px -20px 60px #ffffff;
+    }
+    .student {
+      background-color: #f0f0f0;
+      border-radius: 20px;
+      box-shadow: 10px 10px 30px #bcbcbc, 
+                -10px -10px 30px #ffffff;
+      margin-bottom: 20px;
+      padding: 20px;
+      transition: box-shadow 0.3s;
+    }
+    .student:hover {
+      box-shadow: none;
+    }
+    .student h3 {
+      margin-top: 0;
+      color: #333;
+    }
+    .options button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, opacity 0.3s;
+      box-shadow: 5px 5px 15px #bcbcbc, 
+                -5px -5px 15px #ffffff;
+    }
+    .options button:hover {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    .options button:active {
+      transform: scale(0.95);
+    }
+    .options .present {
+      background-color: #00cc66;
+      color: white;
+    }
+    .options .absent {
+      background-color: #ff4d4d;
+      color: white;
+    }
+    .options .leave {
+      background-color: #ffcc00;
+      color: black;
+    }
+    .summary {
+      position: fixed;
+      top: 20px; /* Adjust as needed */
+      right: 20px; /* Adjust as needed */
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 30px #bcbcbc, 
+                -10px -10px 30px #ffffff;
+      z-index: 1000;
+      max-width: 300px; /* Optional: adjust width */
+    }
+    .summary h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .summary p {
+      margin: 5px 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="summary">
+    <h2>Attendance Summary</h2>
+    <div id="summary"></div>
+  </div>
+  <div class="container">
+    <h1 style="text-align: center;">Student Attendance Portal By "SHOUKAT HASSAN"</h1>
+    <hr>
+    <div id="students"></div>
+  </div>
+
+  <script>
+    const users = [
+      { name: 'John Doe', fatherName: 'Richard Doe', age: 16, rollNo: '101', class: '10th Grade' },
+      { name: 'Jane Smith', fatherName: 'Robert Smith', age: 15, rollNo: '102', class: '9th Grade' },
+      { name: 'Michael Johnson', fatherName: 'James Johnson', age: 17, rollNo: '103', class: '11th Grade' },
+      { name: 'Emily Davis', fatherName: 'William Davis', age: 14, rollNo: '104', class: '8th Grade' },
+      { name: 'Jessica Brown', fatherName: 'Charles Brown', age: 16, rollNo: '105', class: '10th Grade' },
+      { name: 'Daniel Wilson', fatherName: 'Thomas Wilson', age: 15, rollNo: '106', class: '9th Grade' },
+      { name: 'Sarah Taylor', fatherName: 'Andrew Taylor', age: 17, rollNo: '107', class: '11th Grade' },
+      { name: 'David Lee', fatherName: 'George Lee', age: 14, rollNo: '108', class: '8th Grade' },
+      { name: 'Laura Martin', fatherName: 'Paul Martin', age: 16, rollNo: '109', class: '10th Grade' },
+      { name: 'Kevin White', fatherName: 'Mark White', age: 15, rollNo: '110', class: '9th Grade' },
+      { name: 'Anna Harris', fatherName: 'Steven Harris', age: 17, rollNo: '111', class: '11th Grade' },
+      { name: 'Brian Clark', fatherName: 'Edward Clark', age: 14, rollNo: '112', class: '8th Grade' },
+      { name: 'Sophia Lewis', fatherName: 'Henry Lewis', age: 16, rollNo: '113', class: '10th Grade' },
+      { name: 'Christopher Walker', fatherName: 'Frank Walker', age: 15, rollNo: '114', class: '9th Grade' },
+      { name: 'Grace Hall', fatherName: 'Peter Hall', age: 17, rollNo: '115', class: '11th Grade' },
+      { name: 'Justin Allen', fatherName: 'Patrick Allen', age: 14, rollNo: '116', class: '8th Grade' },
+      { name: 'Olivia Young', fatherName: 'Bruce Young', age: 16, rollNo: '117', class: '10th Grade' },
+      { name: 'Nathan Hernandez', fatherName: 'Larry Hernandez', age: 15, rollNo: '118', class: '9th Grade' },
+      { name: 'Mia King', fatherName: 'Joe King', age: 17, rollNo: '119', class: '11th Grade' },
+      { name: 'Ethan Wright', fatherName: 'Stanley Wright', age: 14, rollNo: '120', class: '8th Grade' },
+      { name: 'Ava Lopez', fatherName: 'Timothy Lopez', age: 16, rollNo: '121', class: '10th Grade' },
+      { name: 'Jacob Scott', fatherName: 'Chris Scott', age: 15, rollNo: '122', class: '9th Grade' },
+      { name: 'Samantha Green', fatherName: 'Shawn Green', age: 17, rollNo: '123', class: '11th Grade' },
+      { name: 'Andrew Adams', fatherName: 'Jason Adams', age: 14, rollNo: '124', class: '8th Grade' },
+      { name: 'Ella Baker', fatherName: 'Ryan Baker', age: 16, rollNo: '125', class: '10th Grade' },
+    ];
+
+    const attendance = {};
+
+    function updateSummary() {
+      const summaryElement = document.getElementById('summary');
+      const presentCount = Object.values(attendance).filter(status => status === 'Present').length;
+      const absentCount = Object.values(attendance).filter(status => status === 'Absent').length;
+      const leaveCount = Object.values(attendance).filter(status => status === 'Leave').length;
+
+      summaryElement.innerHTML = `
+        <p>Total Present: ${presentCount}</p>
+        <p>Total Absent: ${absentCount}</p>
+        <p>Total On Leave: ${leaveCount}</p>
+      `;
+    }
+
+    function updateAttendance(rollNo, status) {
+      attendance[rollNo] = status;
+      updateSummary();
+    }
+
+    function renderStudents() {
+      const studentsElement = document.getElementById('students');
+      studentsElement.innerHTML = '';
+      users.forEach(user => {
+        const studentElement = document.createElement('div');
+        studentElement.classList.add('student');
+        studentElement.innerHTML = `
+          <h3>${user.name}</h3>
+          <p>Father's Name: ${user.fatherName}</p>
+          <p>Age: ${user.age}</p>
+          <p>Roll No: ${user.rollNo}</p>
+          <p>Class: ${user.class}</p>
+          <div class="options">
+            <button class="present" onclick="updateAttendance('${user.rollNo}', 'Present')">Present</button>
+            <button class="absent" onclick="updateAttendance('${user.rollNo}', 'Absent')">Absent</button>
+            <button class="leave" onclick="updateAttendance('${user.rollNo}', 'Leave')">Leave</button>
+          </div>
+        `;
+        studentsElement.appendChild(studentElement);
+      });
+    }
+
+    renderStudents();
+  </script>
+</body>
+</html>
