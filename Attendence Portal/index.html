@@ -27,10 +27,19 @@
                 -10px -10px 30px #ffffff;
       margin-bottom: 20px;
       padding: 20px;
-      transition: box-shadow 0.3s;
+      transition: box-shadow 0.3s, background-color 0.3s;
     }
     .student:hover {
       box-shadow: none;
+    }
+    .student.present {
+      background-color: #ccffcc;
+    }
+    .student.absent {
+      background-color: #ffcccc;
+    }
+    .student.leave {
+      background-color: #ffffcc;
     }
     .student h3 {
       margin-top: 0;
@@ -134,8 +143,10 @@
       const presentCount = Object.values(attendance).filter(status => status === 'Present').length;
       const absentCount = Object.values(attendance).filter(status => status === 'Absent').length;
       const leaveCount = Object.values(attendance).filter(status => status === 'Leave').length;
+      const totalStrength = users.length;
 
       summaryElement.innerHTML = `
+        <p>Total Strength: ${totalStrength}</p>
         <p>Total Present: ${presentCount}</p>
         <p>Total Absent: ${absentCount}</p>
         <p>Total On Leave: ${leaveCount}</p>
@@ -145,6 +156,10 @@
     function updateAttendance(rollNo, status) {
       attendance[rollNo] = status;
       updateSummary();
+
+      const studentElement = document.querySelector(`.student[data-roll-no='${rollNo}']`);
+      studentElement.classList.remove('present', 'absent', 'leave');
+      studentElement.classList.add(status.toLowerCase());
     }
 
     function renderStudents() {
@@ -153,6 +168,7 @@
       users.forEach(user => {
         const studentElement = document.createElement('div');
         studentElement.classList.add('student');
+        studentElement.setAttribute('data-roll-no', user.rollNo);
         studentElement.innerHTML = `
           <h3>${user.name}</h3>
           <p>Father's Name: ${user.fatherName}</p>
