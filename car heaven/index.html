@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoukat Hassan Car Collections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/028/217/595/non_2x/rendered-illustration-of-a-dark-abstract-concrete-room-illuminated-at-night-architectural-background-free-photo.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .sub-header {
+            background-color: #6c757d;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .car-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+        }
+        .car-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 250px;
+            min-width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s;
+            scroll-snap-align: center;
+            height: 350px;
+        }
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+        .car-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: filter 0.3s ease-in-out; /* Transition for the blur effect */
+        }
+        .car-card h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .car-card .car-details {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .car-card .car-details.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .car-card .car-details h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .car-card .car-details p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+        }
+        /* Blur effect */
+        .blur {
+            filter: blur(100px); /* Adjust the blur strength as needed */
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Shoukat Hassan </h1>
+</div>
+<div class="sub-header">
+    <p>All SuperSports cars"</p>
+</div>
+
+<div class="car-container" id="carContainer">
+    <script>
+         const cars = [
+            {
+                name: 'Ferrari LaFerrari',
+                image: 'https://supercarblondie.com/wp-content/uploads/ferrari-laferrari-1.jpg',
+                description: 'A hybrid sports car with outstanding performance. <br>HP: 950 <br>0-60 mph: 2.4 seconds'
+            },
+            {
+                name: 'Lamborghini Aventador',
+                image: 'https://etimg.etb2bimg.com/photo/92234254.cms',
+                description: 'A supercar with a powerful V12 engine and striking design. <br>HP: 770 <br>0-60 mph: 2.8 seconds'
+            },
+            {
+                name: 'Porsche 911',
+                image: 'https://www.motortrend.com/uploads/2021/09/2022-Porsche-911-Carrera-GTS-Coupe-8.jpg?w=768&width=768&q=75&format=webp',
+                description: 'A legendary sports car with timeless design and exceptional handling. <br>HP: 450 <br>0-60 mph: 3.5 seconds'
+            },
+            {
+                name: 'Bugatti Chiron',
+                image: 'https://www.carscoops.com/wp-content/uploads/2023/08/Bugatti-Chiron-Super-Sport-Golden-Era-main-1024x576.jpg',
+                description: 'An engineering marvel with a top speed of over 300 mph. <br>HP: 1500 <br>0-60 mph: 2.3 seconds'
+            },
+            {
+                name: 'McLaren P1',
+                image: 'https://www.motortrend.com/uploads/sites/11/2014/03/2014-Mclaren-P1-yellow-front-three-quarters.jpg',
+                description: 'A limited-production plug-in hybrid sports car. <br>HP: 903 <br>0-60 mph: 2.8 seconds'
+            },
+            {
+                name: 'Aston Martin Valkyrie',
+                image: 'https://static0.carbuzzimages.com/wordpress/wp-content/uploads/2024/03/aston-martin-valkyrie-top.jpg',
+                description: 'A hypercar that combines F1 technology with a futuristic design. <br>HP: 1160 <br>0-60 mph: 2.5 seconds'
+            },
+            {
+                name: 'Koenigsegg Jesko',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Koenigsegg_Jesko_displayed_at_the_NYIAS_2019.jpg',
+                description: 'A high-performance supercar with cutting-edge technology. <br>HP: 1280 <br>0-60 mph: 2.5 seconds'
+            },
+            {
+                name: 'Pagani Huayra',
+                image: 'https://preview.redd.it/2017-pagani-huayra-roadster-v0-6k0l1n6i0l7b1.jpg?width=640&crop=smart&auto=webp&s=415b8af6971a04ed6b11c29dd25f94c69d645b8e',
+                description: 'A masterpiece of automotive engineering and design. <br>HP: 730 <br>0-60 mph: 2.8 seconds'
+            },
+            {
+                name: 'Chevrolet Corvette',
+                image: 'https://cgi.chevrolet.com/mmgprod-us/dynres/prove/image.gen?i=2024/1YC07/1YC07__1LT/GKZ_HTAgmds1.jpg&v=deg01&std=true&country=US&removeCat=&background=ffffff',
+                description: 'An American classic with modern performance. <br>HP: 490 <br>0-60 mph: 2.9 seconds'
+            },
+            {
+                name: 'Ford GT',
+                image: 'https://image.cnbcfm.com/api/v1/image/107129255-1664912148718-2022_Ford_GT_LM_Edition_-_Front_in_Blue.jpg?v=1664964001',
+                description: 'A powerful supercar with a rich racing heritage. <br>HP: 660 <br>0-60 mph: 3.0 seconds'
+            },
+            {
+                name: 'Mercedes-Benz AMG GT',                
+                image: 'https://stimg.cardekho.com/images/carexteriorimages/930x620/Mercedes-Benz/AMG-GT/7842/1609141333284/front-left-side-47.jpg',
+                description: 'A luxury sports car with top-notch engineering. <br>HP: 523 <br>0-60 mph: 3.5 seconds'
+            },
+            {
+                name: 'Audi R8',
+                image: 'https://media.drive.com.au/obj/tx_q:50,rs:auto:1920:1080:1/driveau/upload/cms/uploads/e505jltuvqmrprmqycyl',
+                description: 'A high-performance car with a sleek design. <br>HP: 562 <br>0-60 mph: 3.2 seconds'
+            }
+        ];
+
+        const carContainer = document.getElementById('carContainer');
+        let currentDetails = null;
+
+        cars.forEach((car, index) => {
+            const carCard = document.createElement('div');
+            carCard.classList.add('car-card');
+
+            const carImage = document.createElement('img');
+            carImage.src = car.image;
+            carImage.alt = car.name;
+
+            const carName = document.createElement('h2');
+            carName.textContent = car.name;
+
+            const carDetails = document.createElement('div');
+            carDetails.classList.add('car-details');
+
+            const detailsDescription = document.createElement('p');
+            detailsDescription.innerHTML = car.description;
+
+            carDetails.appendChild(detailsDescription);
+
+            carCard.appendChild(carImage);
+            carCard.appendChild(carName);
+            carCard.appendChild(carDetails);
+
+            carCard.addEventListener('mouseenter', () => {
+                carImage.classList.remove('blur');
+                carContainer.childNodes.forEach((node, i) => {
+                    if (i !== index) {
+                        node.firstChild.classList.add('blur');
+                    }
+                });
+            });
+
+            carCard.addEventListener('mouseleave', () => {
+                carContainer.childNodes.forEach((node, i) => {
+                    node.firstChild.classList.remove('blur');
+                });
+            });
+
+            carCard.addEventListener('click', () => {
+                if (currentDetails) {
+                    currentDetails.classList.remove('show');
+                }
+                carDetails.classList.toggle('show');
+                currentDetails = carDetails.classList.contains('show') ? carDetails : null;
+            });
+
+            carContainer.appendChild(carCard);
+        });
+    </script>
+</div>
+</body>
+</html>
