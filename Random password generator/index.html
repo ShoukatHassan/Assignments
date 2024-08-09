@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .custom-button {
+            transition: all 0.3s ease;
+        }
+
+        .custom-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen flex items-center justify-center">
+    <div class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">RANDOM PASSWORD GENERATOR</h2>
+
+        <div class="mb-4">
+            <label for="securityLevel" class="block text-sm text-gray-600">Password Security Level:</label>
+            <div class="flex space-x-2 mt-1">
+                <button id="weakBtn"
+                    class="custom-button bg-blue-500 text-white px-3 py-1 rounded focus:outline-none">Weak</button>
+                <button id="mediumBtn"
+                    class="custom-button bg-gray-300 text-gray-800 px-3 py-1 rounded focus:outline-none">Medium</button>
+                <button id="strongBtn"
+                    class="custom-button bg-gray-300 text-gray-800 px-3 py-1 rounded focus:outline-none">Strong</button>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="passwordLength" class="block text-sm text-gray-600">Password Length: <span id="lengthValue" class="font-semibold">6</span></label>
+            <input type="range" min="1" max="20" value="6"
+                class="w-full mt-2 appearance-none bg-gray-200 rounded h-1" id="passwordLength">
+        </div>
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" class="form-checkbox text-blue-500" id="uppercaseLetters" checked>
+                <span class="ml-2 text-gray-600">Uppercase letters</span>
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" class="form-checkbox text-blue-500" id="lowercaseLetters" checked>
+                <span class="ml-2 text-gray-600">Lowercase letters</span>
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" class="form-checkbox text-blue-500" id="numbers" checked>
+                <span class="ml-2 text-gray-600">Numbers</span>
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label class="inline-flex items-center">
+                <input type="checkbox" class="form-checkbox text-blue-500" id="symbols">
+                <span class="ml-2 text-gray-600">Symbols</span>
+            </label>
+        </div>
+
+        <div class="mb-4">
+            <label for="generatedPassword" class="block text-sm text-gray-600">Generated Password:</label>
+            <input type="text" class="w-full p-2 bg-gray-100 border border-gray-300 rounded mt-1" readonly
+                value="Tap on 'Generate New'" id="generatedPassword">
+        </div>
+
+        <div class="flex justify-between">
+            <button class="custom-button bg-gray-300 text-gray-800 px-4 py-2 rounded focus:outline-none">Cancel</button>
+            <button class="custom-button bg-blue-500 text-white px-4 py-2 rounded focus:outline-none">OK</button>
+        </div>
+
+        <button id="generateBtn"
+            class="mt-4 w-full bg-green-500 text-white px-4 py-2 rounded focus:outline-none">✨ Generate New</button>
+    </div>
+
+    <script>
+        const weakBtn = document.getElementById('weakBtn');
+        const mediumBtn = document.getElementById('mediumBtn');
+        const strongBtn = document.getElementById('strongBtn');
+        const generateBtn = document.getElementById('generateBtn');
+        const generatedPassword = document.getElementById('generatedPassword');
+        const passwordLengthSlider = document.getElementById('passwordLength');
+        const lengthValue = document.getElementById('lengthValue');
+
+        let securityLevel = 'Weak';
+
+        // Update length display when the slider value changes
+        passwordLengthSlider.addEventListener('input', function() {
+            lengthValue.textContent = passwordLengthSlider.value;
+        });
+
+        weakBtn.addEventListener('click', function () {
+            setSecurityLevel('Weak');
+        });
+
+        mediumBtn.addEventListener('click', function () {
+            setSecurityLevel('Medium');
+        });
+
+        strongBtn.addEventListener('click', function () {
+            setSecurityLevel('Strong');
+        });
+
+        generateBtn.addEventListener('click', function () {
+            const password = generatePassword();
+            generatedPassword.value = password;
+        });
+
+        function setSecurityLevel(level) {
+            securityLevel = level;
+
+            weakBtn.classList.remove('bg-blue-500', 'text-white');
+            mediumBtn.classList.remove('bg-blue-500', 'text-white');
+            strongBtn.classList.remove('bg-blue-500', 'text-white');
+
+            if (level === 'Weak') {
+                weakBtn.classList.add('bg-blue-500', 'text-white');
+            } else if (level === 'Medium') {
+                mediumBtn.classList.add('bg-blue-500', 'text-white');
+            } else if (level === 'Strong') {
+                strongBtn.classList.add('bg-blue-500', 'text-white');
+            }
+        }
+
+        function generatePassword() {
+            const length = document.getElementById('passwordLength').value;
+            const includeUppercase = document.getElementById('uppercaseLetters').checked;
+            const includeLowercase = document.getElementById('lowercaseLetters').checked;
+            const includeNumbers = document.getElementById('numbers').checked;
+            const includeSymbols = document.getElementById('symbols').checked;
+
+            let characters = '';
+            if (includeLowercase) characters += 'abcdefghijklmnopqrstuvwxyz';
+            if (includeUppercase) characters += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (includeNumbers) characters += '0123456789';
+            if (includeSymbols) characters += '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+
+            if (!characters) return 'Select at least one character type';
+
+            let password = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                password += characters[randomIndex];
+            }
+
+            return password;
+        }
+    </script>
+</body>
+
+</html>
